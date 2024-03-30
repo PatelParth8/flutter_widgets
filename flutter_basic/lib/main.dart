@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_new
+
 import 'package:flutter_basic/GlobalData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,7 +24,9 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: myHome(),
-    );}}
+    );
+  }
+}
 
 class myHome extends StatefulWidget {
   const myHome({Key? key}) : super(key: key);
@@ -32,7 +36,6 @@ class myHome extends StatefulWidget {
 }
 
 class _myHomeState extends State<myHome> {
-
   TextEditingController txtName = new TextEditingController();
   TextEditingController txtEmail = new TextEditingController();
   TextEditingController txtPincode = new TextEditingController();
@@ -77,6 +80,7 @@ class _myHomeState extends State<myHome> {
             TextField(
               controller: txtPincode,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 hintText: "Enter Pincode",
                 border: OutlineInputBorder(),
@@ -97,26 +101,25 @@ class _myHomeState extends State<myHome> {
                       String email = txtEmail.text.toString();
                       int pincode = int.parse(txtPincode.text.toString());
 
-                      GlobalData.lstperson.add(Person(name: name, email: email, pincode:pincode ));
+                      GlobalData.lstperson.add(
+                          Person(name: name, email: email, pincode: pincode));
 
                       txtName.clear();
                       txtEmail.clear();
                       txtPincode.clear();
                     },
-                    child: const Text("Add")
-                ),
+                    child: const Text("Add")),
                 const SizedBox(
                   width: 20,
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      if(GlobalData.lstperson.isNotEmpty)
-                      {
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => ViewData()));
-                      }
-                      else
-                      {
+                      if (GlobalData.lstperson.isNotEmpty) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ViewData()));
+                      } else {
                         print("List is Empty.....!");
                       }
                     },
@@ -128,6 +131,10 @@ class _myHomeState extends State<myHome> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.call,),),);
+        child: Icon(
+          Icons.call,
+        ),
+      ),
+    );
   }
 }

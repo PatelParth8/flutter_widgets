@@ -13,48 +13,45 @@ class _ViewDataState extends State<ViewData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detail View"),
+        title: const Text("Detail View"),
         backgroundColor: Colors.blueGrey,
       ),
       body: ListView.builder(
-          itemCount: GlobalData.lstperson.length,
-          itemBuilder: (context, index) {
-            return Card(
-              child: ListTile(
-                title: Text(
-                  "Name: ${GlobalData.lstperson[index].name}",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                    color: Colors.blue,
-                  ),
+        itemCount: GlobalData.lstperson.length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: ListTile(
+              title: Text(
+                "Name: ${GlobalData.lstperson[index].name}",
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  color: Colors.blue,
                 ),
-                subtitle: Text(
-                  "Email: ${GlobalData.lstperson[index].email} ------ Pincode: ${GlobalData.lstperson[index].pincode}",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10,
-                    color: Colors.indigo,
-                  ),
-                ),
-                leading: const Icon(Icons.person),
-                trailing: const Icon(Icons.add_card),
-                onTap: () {
-                  GlobalData.selectedIndex = index;
-                  Navigator.push(
-                    context, MaterialPageRoute(
-                      builder: (context) {
-                        return const DetailView();
-                  },
-                  )).then((value) {
-                    setState(() {
-
-                    });
-                  });
-                },
               ),
-            );
-          },
+              subtitle: Text(
+                "Email: ${GlobalData.lstperson[index].email} ------ Pincode: ${GlobalData.lstperson[index].pincode}",
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 10,
+                  color: Colors.indigo,
+                ),
+              ),
+              leading: const Icon(Icons.person),
+              trailing: const Icon(Icons.add_card),
+              onTap: () {
+                GlobalData.selectedIndex = index;
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return const DetailView();
+                  },
+                )).then((value) {
+                  setState(() {});
+                });
+              },
+            ),
+          );
+        },
       ),
     );
   }
@@ -67,27 +64,27 @@ class DetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detail View"),
+        title: const Text("Detail View"),
       ),
       body: Column(
         children: [
           Text(
             GlobalData.lstperson[GlobalData.selectedIndex].name,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               color: Colors.blueAccent,
             ),
           ),
           Text(
             GlobalData.lstperson[GlobalData.selectedIndex].email,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               color: Colors.blueAccent,
             ),
           ),
           Text(
             GlobalData.lstperson[GlobalData.selectedIndex].pincode.toString(),
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               color: Colors.blueAccent,
             ),
@@ -96,12 +93,11 @@ class DetailView extends StatelessWidget {
             onPressed: () {
               GlobalData.lstperson.removeAt(GlobalData.selectedIndex);
               Navigator.pop(context);
-              },
-              child: Text("Delete"),
+            },
+            child: const Text("Delete"),
           ),
         ],
       ),
     );
   }
 }
-
