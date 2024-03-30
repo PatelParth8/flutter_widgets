@@ -8,6 +8,7 @@ import 'package:flutter_search/Search.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
@@ -69,84 +70,85 @@ class TabPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: txtName,
-              decoration: const InputDecoration(
-                hintText: "Enter Your Name",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(
-                  Icons.person,
-                ),
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          TextField(
+            controller: txtName,
+            decoration: const InputDecoration(
+              hintText: "Enter Your Name",
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.person,
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            TextField(
-              controller: txtEmail,
-              decoration: const InputDecoration(
-                hintText: "Enter Your Email",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(
-                  Icons.location_city,
-                ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextField(
+            controller: txtEmail,
+            decoration: const InputDecoration(
+              hintText: "Enter Your Email",
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.location_city,
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            TextField(
-              controller: txtPincode,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              decoration: const InputDecoration(
-                hintText: "Enter Pincode",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(
-                  Icons.numbers,
-                ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextField(
+            controller: txtPincode,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            decoration: const InputDecoration(
+              hintText: "Enter Pincode",
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.numbers,
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     ElevatedButton(
-            //         onPressed: () {
-            //           String name = txtName.text.toString();
-            //           String email = txtCity.text.toString();
-            //           int pincode = int.parse(txtPincode.text.toString());
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     ElevatedButton(
+          //         onPressed: () {
+          //           String name = txtName.text.toString();
+          //           String email = txtCity.text.toString();
+          //           int pincode = int.parse(txtPincode.text.toString());
 
-            //           GlobalData.lstperson.add(Person(name: name, email: email, pincode:pincode ));
+          //           GlobalData.lstperson.add(Person(name: name, email: email, pincode:pincode ));
 
-            //           txtName.clear();
-            //           txtCity.clear();
-            //           txtPincode.clear();
-            //         },
-            //         child: const Text("Add")
-            //     ),
-            //   ],
-            // ),
-            ElevatedButton(
-              onPressed: () {
-                String name = txtName.text;
-                String email = txtEmail.text;
-                int pincode = int.parse(txtPincode.text.toString());
+          //           txtName.clear();
+          //           txtCity.clear();
+          //           txtPincode.clear();
+          //         },
+          //         child: const Text("Add")
+          //     ),
+          //   ],
+          // ),
+          ElevatedButton(
+            onPressed: () {
+              String name = txtName.text;
+              String email = txtEmail.text;
+              int pincode = int.parse(txtPincode.text.toString());
 
-                GlobalData.lstperson.add(Person(name: name, email: email, pincode: pincode));
+              GlobalData.lstperson
+                  .add(Person(name: name, email: email, pincode: pincode));
 
-                txtName.clear();
-                txtEmail.clear();
-                txtPincode.clear();
-              },
-              child: const Text("Save"),
-            ),
-          ],
-        ),
-      );
+              txtName.clear();
+              txtEmail.clear();
+              txtPincode.clear();
+            },
+            child: const Text("Save"),
+          ),
+        ],
+      ),
+    );
   }
 }

@@ -1,6 +1,6 @@
- // ignore_for_file: unused_field
+// ignore_for_file: unused_field
 
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bottomnavbar/DetailView.dart';
 import 'package:flutter_bottomnavbar/Search.dart';
 import 'package:flutter_bottomnavbar/main.dart';
@@ -44,11 +44,13 @@ class _BottomNavigationbarState extends State<BottomNavigationbar> {
       selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Bottom Navigation Bar"),
+        backgroundColor: Colors.blueGrey,
       ),
       body: Center(
         child: _widgetOptions.elementAt(selectedIndex),

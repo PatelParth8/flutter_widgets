@@ -43,16 +43,15 @@ class _TabPage3State extends State<TabPage3> {
                   pincode = GlobalData.lstperson[i].pincode;
                 }
               }
-              setState(() {
-                
-              });
+              setState(() {});
             },
             child: const Text("Search"),
           ),
           const SizedBox(
             height: 30,
           ),
-          Text("Student Name : ${str} has Email ID : ${email} and Pincode is : ${pincode}")
+          Text(
+              "Student Name : ${str} has Email ID : ${email} and Pincode is : ${pincode}")
         ],
       ),
     );
