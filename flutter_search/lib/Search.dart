@@ -9,7 +9,7 @@ class TabPage3 extends StatefulWidget {
 }
 
 class _TabPage3State extends State<TabPage3> {
-  String str = "";
+  String name = "";
   //String name = "";
   String email = "";
   int pincode = 0;
@@ -35,18 +35,17 @@ class _TabPage3State extends State<TabPage3> {
               for (int i = 0; i < GlobalData.lstperson.length; i++) {
                 if (GlobalData.lstperson[i].name == txtName.text) {
                   print(GlobalData.lstperson[i].name);
-                  str = GlobalData.lstperson[i].name;
+                  name = GlobalData.lstperson[i].name;
                   email = GlobalData.lstperson[i].email;
                   pincode = GlobalData.lstperson[i].pincode;
                 }
               }
-              setState(() {
-                
-              });
+              setState(() {});
             },
             child: const Text("Search"),
           ),
-          Text("Student Name : ${str} has Email ID : ${email} and Pincode is : ${pincode}")
+          Text(
+              "Student Name : ${name} has Email ID : ${email} and Pincode is : ${pincode}")
         ],
       ),
     );

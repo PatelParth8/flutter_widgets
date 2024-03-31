@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blueGrey,
-          title: const Text("Search"),
+          title: const Text("Tab Bar"),
           bottom: const TabBar(
             tabs: [
               Tab(
@@ -60,11 +60,18 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class TabPage1 extends StatelessWidget {
+class TabPage1 extends StatefulWidget {
   TabPage1({super.key});
 
+  @override
+  State<TabPage1> createState() => _TabPage1State();
+}
+
+class _TabPage1State extends State<TabPage1> {
   TextEditingController txtName = new TextEditingController();
+
   TextEditingController txtEmail = new TextEditingController();
+
   TextEditingController txtPincode = new TextEditingController();
 
   @override
