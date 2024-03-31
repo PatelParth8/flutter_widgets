@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Bottom Navigation Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      // title: 'Bottom Navigation Demo',
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      // ),
       home: BottomNavigationbar(),
     );
   }
@@ -42,7 +42,6 @@ class TabPage1 extends StatefulWidget {
 }
 
 class _TabPage1State extends State<TabPage1> {
-
   TextEditingController txtName = new TextEditingController();
   TextEditingController txtEmail = new TextEditingController();
   TextEditingController txtPincode = new TextEditingController();
@@ -108,15 +107,15 @@ class _TabPage1State extends State<TabPage1> {
                         String name = txtName.text.toString();
                         String email = txtEmail.text.toString();
                         int pincode = int.parse(txtPincode.text.toString());
-      
-                        GlobalData.lstperson.add(Person(name: name, email: email, pincode:pincode ));
-      
+
+                        GlobalData.lstperson.add(
+                            Person(name: name, email: email, pincode: pincode));
+
                         txtName.clear();
                         txtEmail.clear();
                         txtPincode.clear();
                       },
-                      child: const Text("Add")
-                  ),
+                      child: const Text("Add")),
                   const SizedBox(
                     width: 20,
                   ),

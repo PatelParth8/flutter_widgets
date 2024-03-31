@@ -5,20 +5,20 @@ import 'package:flutter_bottomnavbar/DetailView.dart';
 import 'package:flutter_bottomnavbar/Search.dart';
 import 'package:flutter_bottomnavbar/main.dart';
 
-void main() {
-  runApp(const BottomNavigation());
-}
+// void main() {
+//   runApp(const BottomNavigation());
+// }
 
-class BottomNavigation extends StatelessWidget {
-  const BottomNavigation({super.key});
+// class BottomNavigation extends StatelessWidget {
+//   const BottomNavigation({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: BottomNavigationbar(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: BottomNavigationbar(),
+//     );
+//   }
+// }
 
 class BottomNavigationbar extends StatefulWidget {
   const BottomNavigationbar({super.key});
@@ -28,11 +28,12 @@ class BottomNavigationbar extends StatefulWidget {
 }
 
 class _BottomNavigationbarState extends State<BottomNavigationbar> {
-  int selectedIndex = 0;
   // static const TextStyle taboptionStyle = TextStyle(
   //   fontSize: 30,
   //   fontWeight: FontWeight.bold
   // );
+  int selectedIndex = 0;
+
   static List<Widget> _widgetOptions = <Widget>[
     TabPage1(),
     TabPage2(),
