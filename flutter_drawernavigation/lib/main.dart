@@ -47,6 +47,7 @@ class MyApp extends StatelessWidget {
             ),
             ListTile(
               title: const Text("Home Page"),
+              leading: const Icon(Icons.home),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context,
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
             ),
             ListTile(
               title: const Text("Detail View"),
+              leading: const Icon(Icons.smart_display),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context,
@@ -63,6 +65,7 @@ class MyApp extends StatelessWidget {
             ),
             ListTile(
               title: const Text("Search"),
+              leading: const Icon(Icons.search),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context,

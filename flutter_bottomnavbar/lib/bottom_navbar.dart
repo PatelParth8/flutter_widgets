@@ -53,9 +53,7 @@ class _BottomNavigationbarState extends State<BottomNavigationbar> {
         title: const Text("Bottom Navigation Bar"),
         backgroundColor: Colors.blueGrey,
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(selectedIndex),
-      ),
+      body: _widgetOptions.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

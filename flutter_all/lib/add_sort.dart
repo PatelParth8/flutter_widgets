@@ -185,7 +185,7 @@ class CardList extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return Container(
+              return Card(
                 color: Colors.blueGrey,
                 child: ListTile(
                   leading: const Icon(Icons.numbers),

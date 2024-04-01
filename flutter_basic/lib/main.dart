@@ -102,7 +102,8 @@ class _myHomeState extends State<myHome> {
                       int pincode = int.parse(txtPincode.text.toString());
 
                       GlobalData.lstperson.add(
-                          Person(name: name, email: email, pincode: pincode));
+                        Person(name: name, email: email, pincode: pincode),
+                      );
 
                       txtName.clear();
                       txtEmail.clear();
