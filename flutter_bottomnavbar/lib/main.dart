@@ -48,82 +48,73 @@ class _TabPage1State extends State<TabPage1> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        // appBar: AppBar(
-        //   title: const Text("Flutter"),
-        //   backgroundColor: Colors.blueGrey,
-        // ),
-        body: Container(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
+    return Container(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          TextField(
+            controller: txtName,
+            decoration: const InputDecoration(
+              hintText: "Enter Your Name",
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.person,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextField(
+            controller: txtEmail,
+            decoration: const InputDecoration(
+              hintText: "Enter Your Email",
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.location_city,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextField(
+            controller: txtPincode,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            decoration: const InputDecoration(
+              hintText: "Enter Pincode",
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.numbers,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextField(
-                controller: txtName,
-                decoration: const InputDecoration(
-                  hintText: "Enter Your Name",
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(
-                    Icons.person,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextField(
-                controller: txtEmail,
-                decoration: const InputDecoration(
-                  hintText: "Enter Your Email",
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(
-                    Icons.location_city,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextField(
-                controller: txtPincode,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                decoration: const InputDecoration(
-                  hintText: "Enter Pincode",
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(
-                    Icons.numbers,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        String name = txtName.text.toString();
-                        String email = txtEmail.text.toString();
-                        int pincode = int.parse(txtPincode.text.toString());
+              ElevatedButton(
+                  onPressed: () {
+                    String name = txtName.text.toString();
+                    String email = txtEmail.text.toString();
+                    int pincode = int.parse(txtPincode.text.toString());
 
-                        GlobalData.lstperson.add(
-                            Person(name: name, email: email, pincode: pincode));
+                    GlobalData.lstperson.add(
+                        Person(name: name, email: email, pincode: pincode));
 
-                        txtName.clear();
-                        txtEmail.clear();
-                        txtPincode.clear();
-                      },
-                      child: const Text("Add")),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                ],
+                    txtName.clear();
+                    txtEmail.clear();
+                    txtPincode.clear();
+                  },
+                  child: const Text("Add")),
+              const SizedBox(
+                width: 20,
               ),
             ],
           ),
-        ),
+        ],
       ),
     );
   }
