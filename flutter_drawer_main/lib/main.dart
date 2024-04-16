@@ -111,6 +111,7 @@ class _MyAppState extends State<MyApp> {
             TextField(
               controller: txtPincode,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              obscureText: true,
               decoration: const InputDecoration(
                 hintText: "Enter Pincode",
                 border: OutlineInputBorder(),
