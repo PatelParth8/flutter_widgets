@@ -65,6 +65,7 @@ class DetailView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Detail View"),
+        backgroundColor: Colors.blueGrey,
       ),
       body: Column(
         children: [
