@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Navigation Drawer'),
+        backgroundColor: Colors.blueGrey,
       ),
       drawer: Drawer(
         child: ListView(
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.blueGrey,
               ),
               child: Text(
                 'Drawer Header',
