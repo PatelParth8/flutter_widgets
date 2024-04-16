@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.blueGrey,
               ),
               child: Text(
                 'Drawer Header',
